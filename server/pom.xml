@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>http-client-func-test</artifactId>
+        <groupId>io.esastack</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>server</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <restlight.version>0.1.1</restlight.version>
+        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!--Restlight starter-->
+        <dependency>
+            <groupId>io.esastack</groupId>
+            <artifactId>restlight-starter</artifactId>
+            <version>${restlight.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.esastack</groupId>
+            <artifactId>restlight-ext-multipart-starter</artifactId>
+            <version>${restlight.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
