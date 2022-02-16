@@ -2,20 +2,34 @@ package io.esastack.test.func.http;
 
 import io.esastack.httpclient.core.HttpResponse;
 import io.esastack.restclient.RestResponseBase;
+import io.esastack.test.func.ClientUtils;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.CompletionStage;
 
 public class InterceptTest {
 
     private static final String URL_PREFIX = "http://localhost:8080/interceptTest/";
+    private static final String POST_WITHOUT_BODY = "postWithoutBody";
 
-    public static void main(String args[]) throws Exception {
-        testContinue100();
-//        testReadTimeout();
-//        testRetry();
-        testInterceptorAndFilter();
+
+    public static void main(String[] args) throws Exception {
+        testRetry();
     }
+
+//    private static void testPostWithoutBody() throws Exception {
+//        HttpResponse response = ClientUtils.client()
+//                .post("http://localhost:8080/rest/" + POST_WITHOUT_BODY)
+//                .execute()
+//                .get();
+//        if (response.status() == 200) {
+//            System.out.println("Success");
+//        } else {
+//            System.err.println("Error occur!status:" + response.status() +
+//                    ", body:" + response.body().string(StandardCharsets.UTF_8));
+//        }
+//    }
 
     private static void testContinue100() throws Exception {
         HttpResponse response = ClientUtils.client()
